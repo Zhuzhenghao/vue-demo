@@ -1,8 +1,6 @@
 name: lgtm workflow 
 
 on:
-  pull_request:
-    types: [opened, labeled, unlabeled, synchronize]
   pull_request_review:
   issue_comment:
 
@@ -18,4 +16,3 @@ jobs:
       uses: docker://jonyhy/lgtm-action:v1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        times: 2
