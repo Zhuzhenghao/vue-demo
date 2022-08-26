@@ -6,8 +6,8 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-16.04
-    timeout-minutes: 3
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -16,3 +16,4 @@ jobs:
       uses: docker://jonyhy/lgtm-action:v1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
+        times: 2
